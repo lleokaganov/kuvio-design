@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <link rel="stylesheet"  href="./index.css" />
+
+    <link rel="stylesheet"  href="./css/audit-search.css" />
+    <link rel="stylesheet"  href="./css/audit-elements.css" />
+
+
+    <link rel="stylesheet"  href="./all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+
+    <style>
+    body {
+	padding: 0;
+	margin: 0;
+	--Neutral-Black: #ccc;
+	--PoleMax: 521px;
+	--PoleSmall: 100%;
+	--PoleLeft: 10px;
+    }
+
+
+.audit-name2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.audit-name-parent2 {
+    gap: 16px;
+    z-index: 0;
+}
+
+
+/* Verifed stamp */
+.verified {
+    margin: 0 !important;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 10px;
+    z-index: 1;
+    font-size: 14px;
+    color: #356bff;
+}
+
+/***************************/
+
+.frame-cnt {
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #f2f4ff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px 16px;
+}
+
+.frame-div {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.add-wrapper {
+    width: 24px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 8px;
+}
+
+.portfolio-name {
+    position: relative;
+    font-weight: 600;
+}
+
+.frame-ev-parameters {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    text-align: left;
+    font-size: 14px;
+    color: #000;
+    font-family: Inter;
+}
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="audit-board">
+	<div class="frame-parent">
+<div style='margin-top:100px'></div>
+
+
+<!------------------>
+    <div class="frame-new">
+
+	<!-- verifed -->
+	<div class="verified"><img src="img/verified.svg">Auditor’s stamp of approval</div>
+
+
+	<div class="audit-name-parent audit-name-parent2">
+    	    <div class="rs">Audit name</div>
+    	    <div class="audit-name2">Product designer</div>
+    	    <div class="button-blue mv0"><div class="login-as-auditor">Audit me!</div></div>
+
+	    <div class="frame-container rs">
+        	<div>87 Candidates</div>
+        	<div>4 Evaluation parameters</div>
+        	<div>1 Requested evidence</div>
+    	    </div>
+	</div>
+
+
+        <div class="audit-name-parent">
+            <div class="rs">Audit description</div>
+            <div class="audit-description">We conduct a thorough audit of product designers' CVs to ensure they meet the qualifications needed for key roles in tech startups.</div>
+        </div>
+
+	<div class="frame-ev-parameters">
+	    <div class="evaluation-parameters">Evaluation parameters</div>
+
+    		<div class="frame-cnt">
+        		<div class="frame-div">
+        		    <div class="add-wrapper"><img class="icon14 mv" src="img/add.svg"></div>
+        		    <div class="portfolio-name">Portfolio seniority</div>
+        		</div>
+    		</div>
+
+    		<div class="frame-cnt">
+        		<div class="frame-div">
+        		    <div class="add-wrapper"><img class="icon14 mv" src="img/add.svg"></div>
+        		    <div class="portfolio-name">Test completion</div>
+        		</div>
+    		</div>
+
+    		<div class="frame-cnt">
+        		<div class="frame-div">
+        		    <div class="add-wrapper"><img class="icon14 mv" src="img/add.svg"></div>
+        		    <div class="portfolio-name">Confirmed leadership experience</div>
+        		</div>
+    		</div>
+
+    		<div class="frame-cnt">
+        		<div class="frame-div">
+        		    <div class="add-wrapper"><img class="icon14 mv" src="img/add.svg"></div>
+        		    <div class="portfolio-name">Industry experience</div>
+        	        </div>
+    		</div>
+
+    		<div class="frame-cnt">
+        		<div class="frame-div">
+        		    <div class="add-wrapper"><img class="icon14 mv" src="img/add.svg"></div>
+        		    <div class="portfolio-name">Collaboration</div>
+        		</div>
+    		</div>
+
+    		<div class="frame-cnt">
+        		<div class="frame-div">
+        		    <div class="add-wrapper"><img class="icon14 mv" src="img/add.svg"></div>
+        		    <div class="portfolio-name">Visual UI design</div>
+        		</div>
+    		</div>
+
+    		<div class="frame-cnt">
+        		<div class="frame-div">
+        		    <div class="add-wrapper"><img class="icon14 mv" src="img/add.svg"></div>
+        		    <div class="portfolio-name">Design Ops</div>
+        		</div>
+    		</div>
+	</div>
+
+    </div>
+
+<!------------------>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </div>
+
+</body>
+</html>

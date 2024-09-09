@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <!-- link rel="stylesheet"  href="./index.css" / -->
+
+    <!-- link rel="stylesheet"  href="./audit-search.css" / -->
+    <link rel="stylesheet"  href="./audit-elements.css" />
+
+<!--
+    <link rel="stylesheet"  href="./auditor_panel.css" />
+
+
+    <link rel="stylesheet"  href="./login.css" />
+    <link rel="stylesheet"  href="./index.css" />
+-->
+
+    <link rel="stylesheet"  href="./all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+
+    <style>
+
+.audit-board {
+    padding-left: var(--PoleLeft, 139px);
+    EEEEEEEEwidth: 100%;
+    background-color: #eee;
+    min-height: 100vh;
+    padding-bottom:80px;
+    text-align: left;
+    font-size: 12px;
+    color: #000;
+    font-family: Inter;
+}
+
+.frame-parent {
+    padding-top: 14px;
+    max-width: var(--PoleMax, 600px);
+    EEEEEEEEEEEwidth: 100%; /*calc( var(--PoleSmall, 528px) + 32px); 560px;*/
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+}
+
+    body {
+	padding: 0;
+	margin: 0;
+	--Neutral-Black: #ccc;
+	--PoleMax: 521px;
+	--PoleSmall: 100%;
+	--PoleLeft: 10px;
+    }
+    </style>
+
+</head>
+<body>
+
+    <div class="audit-board">
+	<div class="frame-parent">
+
+	    <!-- 1 -->
+    	    <div class="frame-group">
+    		    <div class="audit-name-parent">
+        		    <div class="rs">Audit name</div>
+        		    <div class="audit-name">Product designer</div>
+    		    </div>
+    		    <div class="audit-name-parent">
+        		    <div class="rs">Audit description</div>
+        		    <div class="audit-description">We conduct a thorough audit of product designers' CVs to ensure they meet the qualifications needed for key roles in tech startups.</div>
+    		    </div>
+    		    <div class="frame-container">
+        		    <div class="icon-and-txt">
+        			    <img class="ico16" src="frame_person.svg">
+        			    <div class="rs">78</div>
+        		    </div>
+        		    <div class="rs">10 Evaluation parameters</div>
+        		    <div class="rs">4 Requested evidence</div>
+    		    </div>
+    	    </div>
+
+	    <!-- 2 -->
+    	    <div class="frame-group">
+    		    <div class="audit-name-parent">
+        		    <div class="rs">Audit name</div>
+    			    <div class="audit-name">Open source developer</div>
+    		    </div>
+    		    <div class="audit-name-parent">
+        		    <div class="rs">Audit description</div>
+        		    <div class="audit-description">Comprehensive review of the developer's contributions, code quality, project involvement, and collaboration within the open-source community</div>
+    		    </div>
+    		    <div class="frame-container">
+        		    <div class="icon-and-txt">
+        			    <img class="ico16" src="frame_person.svg">
+        			    <div class="rs">376</div>
+        		    </div>
+        		    <div class="rs">2 Evaluation parameters</div>
+        		    <div class="rs">1 Requested evidence</div>
+    		    </div>
+    	    </div>
+
+	    <!-- 3 -->
+    	    <div class="frame-group">
+    		    <div class="audit-name-parent">
+        		    <div class="rs">Audit name</div>
+        		    <div class="audit-name">Chiromantic palm reading</div>
+    		    </div>
+    		    <div class="audit-name-parent">
+        		    <div class="rs">Audit description</div>
+        		    <div class="audit-description">Each reading will be carefully interpret unique characteristics, personality traits, and potential paths in life based on submitted photo</div>
+    		    </div>
+    		    <div class="frame-container">
+        		    <div class="icon-and-txt">
+        			    <img class="ico16" src="frame_person.svg">
+        			    <div class="rs">6</div>
+        		    </div>
+        		    <div class="rs">4 Evaluation parameters</div>
+        		    <div class="rs">1 Requested evidence</div>
+    		    </div>
+    	    </div>
+
+	</div>
+    </div>
+
+</body>
+</html>

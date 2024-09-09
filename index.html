@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <link rel="stylesheet"  href="./sys.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto Mono:wght@400&display=swap" />
+
+
+
+
+
+    <!-- script type="module" src="lit/ModalDialog.js"></script -->
+
+    <script type="module" src="lit/AuditPanel.js"></script>
+    <script type="module" src="lit/AuditSearchPanel.js"></script>
+
+
+    <style>
+    body {
+	padding: 0;
+	margin: 0;
+	--Neutral-Black: #ccc;
+	--PoleMax: 521px;
+	--PoleSmall: 100%;
+	--PoleLeft: 10px;
+    }
+    </style>
+
+    <script>
+	modal=function(s,header) {
+	    if(header==undefined) {
+		s="<div class='modal-pole'>"+s+"</div>";
+	    } else {
+		s="<div class='modal-pole'>"+s+"</div>";
+	    }
+
+	    w.innerHTML=s;
+
+	    var e=document.querySelector('.modal-overlay');
+	    e.style.opacity='1.0';
+	    e.style.pointerEvents='auto';
+	    var w=e.querySelector('.modal-content');
+
+	};
+	modal_close=function() {
+	    var e=document.querySelector('.modal-overlay');
+	    e.style.opacity='0.0';
+	    e.style.pointerEvents='none';
+	};
+
+    </script>
+
+
+</head>
+<body onload="modal('ddd');">
+
+
+
+<div class="modal-overlay" onclick="modal_close()">
+<div class="modal-content" onclick="window.event.stopPropagation(); modal_close();">
+    <p>fdsfe</p>
+</div>
+</div>
+
+<!--
+<modal-dialog>
+  <div slot="header">Custom Modal Title</div>
+  <div slot="body">
+    This is custom content for the modal body. You can put anything here, such as text, images, or forms.
+  </div>
+  <div slot="footer">
+    <button class="button">Custom Action</button>
+  </div>
+</modal-dialog>
+-->
+
+
+    <div class="audit-board">
+    <div class="frame-parent">
+
+
+
+
+<!------------------>
+
+<button onclick="modal('<audit-search-panel></audit-search-panel>')">Open Modal</button>
+
+<!--
+
+<audit-search-panel></audit-search-panel>
+
+<audit-panel
+    audit_name="Product designer"
+    audit_description="We conduct a thorough audit of product designers' CVs to ensure they meet the qualifications needed for key roles in tech startups."
+    number_of_candidates="78"
+    number_of_parameters="10"
+    requested_evidence="4">
+</audit-panel>
+
+<audit-panel
+    audit_name="Open source developer"
+    audit_description="Comprehensive review of the developer's contributions, code quality, project involvement, and collaboration within the open-source community"
+    number_of_candidates="376"
+    number_of_parameters="2"
+    requested_evidence="1">
+</audit-panel>
+
+<audit-panel
+    audit_name="Chiromantic palm reading"
+    audit_description="Each reading will carefully interpret unique characteristics, personality traits, and potential paths in life based on submitted photo"
+    number_of_candidates="6"
+    number_of_parameters="4"
+    requested_evidence="1">
+</audit-panel>
+
+-->
+
+<!------------------>
+
+
+    </div>
+    </div>
+
+</body>
+</html>
