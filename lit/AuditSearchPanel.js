@@ -3,9 +3,6 @@ import {LitElement, html, css} from './lit-core.min.js';
 class AuditSearchPanel extends LitElement {
   static styles = css`
 
-
-
-
     :host {
         width:100%
     }
@@ -35,7 +32,7 @@ class AuditSearchPanel extends LitElement {
 
     .audit-search-by-content {
       letter-spacing: 0.01em;
-      background-color: #f5f5f5;
+      background-color: white;
       border-radius: 4px;
       border: 1px solid #ddd;
       box-sizing: border-box;

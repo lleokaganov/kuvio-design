@@ -1,0 +1,195 @@
+import { LitElement, html, css } from './lit-core.min.js';
+
+class RequestedFiles extends LitElement {
+  static styles = css`
+    :host {
+        width:100%
+    }
+
+    .mv,.mv0,.mv00 { transition: transform 0.2s ease-in-out; }
+    .mv:hover,mv0:hover,mv00:hover { transition-property: transform;
+        transition-duration: 0.2s;animation: none; transform: scale(1.7); cursor:pointer;}
+    .mv0:hover { transform: scale(1.1); }
+    .mv00:hover { transform: scale(1.05); }
+
+        .frame-parent {
+            width: 100%;
+            border-radius: 16px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16px;
+            gap: 24px;
+            text-align: left;
+            font-size: 16px;
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .frame-group, .evidencerequest-parent, .frame-container, .evidencerequest {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 16px;
+            align-self: stretch;
+        }
+
+        .evidencerequest-parent {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .requested-evidence-wrapper, .notes-wrapper, .type-parent, .type-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .notes-wrapper, .icon-wrapper {
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        .notes-icon, .check-circle-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .requested-evidence, .submit-evidence, .edit, .edit1, .edit2, .edit3 {
+            position: relative;
+            line-height: 130%;
+            font-weight: 500;
+            color: #356bff;
+            display: inline-block;
+        }
+
+        .evidencerequest {
+            border: 1px solid #356bff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            flex-direction: row;
+            gap: 16px;
+            position: relative;
+        }
+
+        .evidencerequest1, .evidencerequest2, .evidencerequest4 {
+            background-color: #e6f4ff;
+            border: 1px solid #ddd;
+            padding: 12px 16px;
+            border-radius: 8px;
+        }
+
+        .type {
+            font-family: 'Roboto Mono', monospace;
+            opacity: 0.8;
+            font-size: 12px;
+        }
+
+        .name, .portfoliopdf, .cv-finalpdf {
+            font-weight: 600;
+            line-height: 130%;
+        }
+
+        .write-a-project, .the-project-plan, .my-recent-projects {
+            font-size: 14px;
+            line-height: 140%;
+        }
+
+        .uploaded-just-now {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .button {
+            background-color: #356bff;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+        }
+    `;
+
+    render() {
+        return html`
+        <div class="frame-parent">
+            <div class="frame-group">
+                <div class="requested-evidence-wrapper">
+                    <div class="requested-evidence">Requested evidence</div>
+                </div>
+                <div class="evidencerequest-parent">
+
+                    <div class="evidencerequest">
+                        <div class="notes-wrapper">
+                            <img class="notes-icon" alt="notes" src="img/notes.svg">
+                        </div>
+                        <div class="type-parent">
+                            <div class="type">Text</div>
+                            <div class="name">Test task</div>
+                            <div class="write-a-project">
+                                Write a project plan for designing an initial version of a 'Heads or Tails' app in 6 weeks. Less is more – the plan should be concise, focused, and demonstrate your ability to think strategically about designing a simple yet engaging app.
+                            </div>
+                            <div class="evidencerequest1">
+                                <div class="the-project-plan">The project plan for designing an initial version of a 'Heads or Tails' app in 6 weeks will involve three main phases: Research & Ideation (Week 1) to ...</div>
+                                <div class="edit">Edit</div>
+                            </div>
+                        </div>
+                        <div class="edit1">Upload</div>
+                        <div class="submit-evidence">Submit evidence</div>
+                    </div>
+
+
+                    <div class="frame-container">
+                        <div class="notes-wrapper">
+                            <img class="notes-icon" alt="upload" src="img/upload_2.svg">
+                        </div>
+                        <div class="type-group">
+                            <div class="type1">Uploaded document</div>
+                            <div class="name1">Portfolio</div>
+                            <div class="write-a-project">Three insightful projects are enough. Quality and depth over quantity. Tell us what the constraints were, which challenges you encountered, how you solved them.</div>
+                            <div class="evidencerequest2">
+                                <img class="check-circle-icon" alt="check" src="img/check_circle.svg">
+                                <div class="portfoliopdf-parent">
+                                    <div class="portfoliopdf">Portfolio.pdf</div>
+                                    <div class="my-recent-projects">My recent projects</div>
+                                </div>
+                                <div class="uploaded-just-now">Uploaded just now</div>
+                                <div class="edit2">Edit</div>
+                            </div>
+                        </div>
+                        <div class="edit3">Upload</div>
+                    </div>
+
+
+                    <div class="frame-container">
+                        <div class="notes-wrapper">
+                            <img class="notes-icon" alt="upload" src="img/upload_2.svg">
+                        </div>
+                        <div class="type-group">
+                            <div class="type1">Uploaded document</div>
+                            <div class="name1">CV</div>
+                            <div class="evidencerequest4">
+                                <img class="check-circle-icon" alt="check" src="img/check_circle.svg">
+                                <div class="cv-finalpdf">CV_final.pdf</div>
+                                <div class="uploaded-just-now">Uploaded on 21.08.2024</div>
+                                <div class="edit2">Edit</div>
+                            </div>
+                        </div>
+                        <div class="edit3">Upload</div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <div class="login-as-auditor">Audit me!</div>
+            </div>
+        </div>
+        `;
+    }
+}
+
+customElements.define('requested-files', RequestedFiles);

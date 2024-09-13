@@ -5,6 +5,7 @@ import {LitElement, html, css} from './lit-core.min.js';
 class AuditPanel extends LitElement {
 
     static properties = {
+        audit_id: {type: String},
         audit_name: {type: String},
         audit_description: {type: String},
         number_of_candidates: {type: Number},
@@ -17,7 +18,7 @@ class AuditPanel extends LitElement {
             border: 2px solid transparent;
             align-self: stretch;
             border-radius: 8px;
-            background-color: #f5f5f5;
+            background-color: #fff; /*#f5f5f5;*/
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -99,7 +100,7 @@ class AuditPanel extends LitElement {
 
     render() {
         return html`
-            <div class="frame-group">
+            <div class="frame-group" onclick="mudaki('${this.audit_id}')">
                 <div class="audit-name-parent">
                     <div class="rs">Audit name</div>
                     <div class="audit-name">${this.audit_name}</div>
@@ -122,9 +123,9 @@ class AuditPanel extends LitElement {
 
     constructor() {
         super();
+        this.audit_id = 'none';
         this.audit_name = 'Open source developer';
-        this.audit_description = `Comprehensive review of the developer's contributions, 
-                                 code quality, project involvement, and collaboration within the open-source community`;
+        this.audit_description = `Comprehensive review of the developer's contributions, code quality, project involvement, and collaboration within the open-source community`;
         this.number_of_candidates = 376;
         this.number_of_parameters = 2;
         this.requested_evidence = 1;
