@@ -1,4 +1,7 @@
 
+unis = "a3IZTNyJ2cPD2A9G-d851f0e3a61f367eddf41fae6673c48b76d42d93b78b88a30e03552287ca7116";
+
+
 mudaki=function(x){
     if(!x) x = 'T E S T';
     document.querySelector('#buka').innerHTML = x;
@@ -48,7 +51,7 @@ OneFile_Сontent=`
    <one-file mode="file" name="Portfolio.pdf" description="My recent projects" filesize="15" unixtime="1234567898"></one-file>
    <one-file mode="file" name="Portfolio1.pdf" description="Лошадка придумала конский гей-флаг. В нем десять цветов. Называются так: саврасый, соловый, буланый, каурый, игреневый, рыжий, караковый, бурый, а следом гнедой, и в конце - вороной. Лошадка на прайд поскакала со мной!" filesize="15" unixtime="1726264523"></one-file>
    <one-file mode="file" name="Portfolio2.pdf" description="" filesize="15" unixtime="1234067800"></one-file>
-   <one-file mode="plaintext" name="Portfolio3.pdf" description="Углеродный след, углеродный след, давай-ка сделай попроще еблет, ненавидим тебя, злобную вражину, засунь свою нефть обратно в скважину, верни метан коровкам в жопы, почисть океан от Штатов до Европы от радона, гандона да пластикового пакетика, пусть срёт одна лишь зелёная энергетика!" filesize="15" unixtime="102345678"></one-file>
+   <one-file mode="text" name="Portfolio3.pdf" description="Углеродный след, углеродный след, давай-ка сделай попроще еблет, ненавидим тебя, злобную вражину, засунь свою нефть обратно в скважину, верни метан коровкам в жопы, почисть океан от Штатов до Европы от радона, гандона да пластикового пакетика, пусть срёт одна лишь зелёная энергетика!" filesize="15" unixtime="102345678"></one-file>
 </div>
 `;
 

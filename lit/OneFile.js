@@ -8,19 +8,38 @@ class OneFile extends LitElement {
     mode: { type: String },
     name: { type: String },
     description: { type: String },
+    headname: { type: String },
+    headdescription: { type: String },
     filesize: { type: Number },
     unixtime: { type: Number },
+    check: { type: Boolean },
+    unimode: { type: String },
   };
 
   constructor() {
     super();
-    this.mode = 'plaintext';
-    this.name =  'no name';
+    this.mode = 'text';
+    this.name = 'no name';
     this.description = '';
+
+    this.headname = '';
+    this.headdescription = '';
+
     this.name =  'no name';
     this.filesize = 0;;
     this.unixtime = 0;
+
+    this.unimode = 'edit'; // select
+
+    // this.check = 1;
   }
+
+  connectedCallback() {
+    super.connectedCallback();
+    // Преобразуем значения 'false' и '0' в логическое значение false
+    this.check = this.hasAttribute('check') && this.getAttribute('check') !== 'false' && this.getAttribute('check') !== '0';
+  }
+
 
   static styles = css`
     :host {
@@ -116,19 +135,33 @@ class OneFile extends LitElement {
   `;
 
   render() {
-    return html`<div class="evidencerequest" @click="${this.edit}">${this.render_pool()}</div>`;
+    return html`<div class="evidencerequest" @click="${this.unimode=='select' ? this.select : this.edit}">${this.render_pool()}</div>`;
   }
 
+    select(event) {
+	console.log("select");
+    }
+
     edit(event) {
+	console.log("edit");
+
 //	dialog(`<win-upload-file name="${this.name}" description="${this.description}"></win-upload-file>`,'Upload File');
-	dialog(`<win-upload-text name="${this.name}" text="${this.description}" description="${this.description}"></win-upload-text>`,'Edit Text');
+
+	dialog(`<win-file
+mode="${this.mode}"
+text="${this.description}"
+name="${this.name}"
+description="${this.description}"
+headname="${this.headname}"
+headdescription="${this.headdescription}"
+></win-file>`,'Edit Text');
     }
 
     render_pool() {
-	if(this.mode=='plaintext') return html`<div class="description">${this.description}</div>`;
+	if(this.mode=='text') return html`<div class="description">${this.description}</div>`;
 
 	return html`
-	    <img class="icon24 mv0" src="img/check_circle.svg">
+	    <img class="icon24 mv0" src="${this.check ? "img/check_circle.svg":"img/radio_button_unchecked.svg"}">
 	    <div class="portfoliopdf-parent">
     	    <div class="name">${this.name}</div>
     	    <div class="description">${this.description}</div>

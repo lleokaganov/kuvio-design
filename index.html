@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="./sys.css" />
     <script src="./index.js"></script>
 
+    <script src="./main.js"></script>
+    <script src="./KUVIO.js"></script>
+    <script src="./IPFS.js"></script>
+
+
+
     <!-- script type="module" src="lit/lit-core.min.js"></script -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
@@ -14,8 +20,12 @@
 
     <script type="module" src="lit/AuditPanel.js"></script>
     <script type="module" src="lit/AuditSearchPanel.js"></script>
+<!--
     <script type="module" src="lit/WinUploadText.js"></script>
     <script type="module" src="lit/WinUploadFile.js"></script>
+-->
+    <script type="module" src="lit/WinFile.js"></script>
+
     <script type="module" src="lit/Evaluation.js"></script>
     <script type="module" src="lit/AuditorInfo.js"></script>
     <script type="module" src="lit/Document.js"></script>
@@ -54,13 +64,13 @@
     <script>
 	GO=function(){
 
-     // document.querySelector('#pole').innerHTML= Document_Content;
+//      document.querySelector('#pole').innerHTML= Document_Content;
 
      document.querySelector('#pole').innerHTML= OneFile_Сontent;
 
 //     document.querySelector('#pole').innerHTML= RequestedFiles_Сontent;
 
-	//     document.querySelector('#pole').innerHTML= Audit_Content + AuditorInfo_Content + RequestedFiles_content;
+//	     document.querySelector('#pole').innerHTML= Audit_Content + AuditorInfo_Content; //  + RequestedFiles_Content;
 
 	    // document.querySelector('#pole').innerHTML=Audit_Content;
 	    // document.querySelector('#pole').innerHTML=Evaluation_Content;
@@ -92,12 +102,11 @@
 <!--
 <div class="frame-parent">
 <div class="frame-group">
--->
-    <div class="pole" id='pole'>
 
   <requested-files></requested-files>
 
-</div>
+-->
+    <div class="pole" id='pole'></div>
 
 </div>
 <!------------------>
