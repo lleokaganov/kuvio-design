@@ -1,4 +1,0 @@
-#!/bin/sh
-
-killall node
-#nohup live-server &
