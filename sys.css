@@ -1,3 +1,12 @@
+
+/*
+.legend { text-shadow: none !important; width:100% !important; margin:0 !important; padding:0 !important; }
+.pop4 { padding:0 !important; margin:0 !important; }
+*/
+
+
+
+
 .mv,.mv0,.mv00 { transition: transform 0.2s ease-in-out; }
 .mv:hover,mv0:hover,mv00:hover { transition-property: transform; transition-duration: 0.2s;
 animation: none; transform: scale(1.7); cursor:pointer;}
@@ -5,6 +14,7 @@ animation: none; transform: scale(1.7); cursor:pointer;}
 .mv00:hover { transform: scale(1.05); }
 
 DIALOG {
+    padding: 0;
       background-color: white;
       border: unset;
       border-radius: 8px;
@@ -94,7 +104,7 @@ dialog.closing {
 }
 
 .modal-close {
-    width: 38px;
+    EEEEEEEEEEEwidth: 38px;
     position: absolute;
     margin: 0 !important;
     top: 0;
@@ -146,3 +156,6 @@ dialog.closing {
     font-size: 14px;
 }
 
+
+
+/************** OLD *************/

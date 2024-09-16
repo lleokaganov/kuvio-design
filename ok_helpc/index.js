@@ -1,32 +1,6 @@
 
 function INIT(){
 
-    ohelpc=function(id,header,s) { dialog(s,header); }
-
-    salert = function(l,t) {
-	var header,k=l.indexOf('<p>');
-	if(k>=0) {
-	    header=l.substring(0,k);
-	    l=l.substring(k+3);
-	} else {
-	    header='&nbsp;';
-	}
-	var id=dialog(l,header,{id:'salert'});
-        if(t) setTimeout(()=>{dialog.close(id)},t);
-        return false;
-    };
-
-
-    document.addEventListener('keydown', function(event) {
-	if(event.key === 'Escape') {
-	    const p = document.querySelectorAll('dialog[open]');
-	    console.log(p);
-	    if(p.length > 0) setTimeout(()=>{p[p.length - 1].remove()}, 10); // Удаляем самый верхний открытый
-	}
-    });
-
-return;
-
     wintempl_cls='pop4 zoomIn animated';
     wintempl="<div id='{id}_body'>{s}</div>"; // <i id='{id}_close' title='Close' class='can4'></i>
 /*
@@ -95,48 +69,58 @@ mudaki=function(x){
 
 
 dialog=function(s,header,set) {
-
-
-    if(set && set.id) {
-	var id = set.id;
-	var e = document.querySelector('dialog#'+id);
-	if(e) {
-	    e.querySelector('.dialog-content').innerHTML = s;
-	    return id;
-	}
-    } else {
-	dialog.id++;
-	var id = 'dialog_'+dialog.id;
-    }
-
-    s = (header==undefined ? ''
-		    : `<div class="modal-top">
+/*
+	    if(header==undefined) {
+		s=`<div class="modal-item" style="padding: 16px 16px 16px 16px;">`+s+`</div>`;
+	    } else {
+		header=`<div class="modal-top">
 			<div class="modal-item">`+header+`</div>
-			<div class="modal-close mv0" onclick="dialog.close('`+id+`')">Close</div>
-		    </div>`
-		)+`<div class="modal-item dialog-content" style="padding: 16px 16px 16px 16px;">`+s+`</div>`;
+			<div class="modal-close mv0" id='`+dialog.id+`_close'>Close</div>
+		    </div>`;
+		s=`<div class="modal-item" style="padding: 16px 16px 16px 16px;">`+s+`</div>`;
+	    }
+*/
+	    return ohelpc('dialog_'+(dialog.id++),header,s);
 
-    var e = document.createElement('dialog');
-    e.id = id;
-    e.innerHTML = s;
-    var x='background-color'; e.style[x] = (set && set[x] ? set[x] : 'white');
-    document.body.appendChild(e);
+/*
 
-    e.showModal();
-    // e.style.backdropFilter = 'opacity(0.75)';
-    // e.style.zIndex=dialog.id;
-    e.classList.add('showing');
-    e.classList.remove('closing');
+	    if(header==undefined) {
+		s=`<div class="modal-item" style="padding: 16px 16px 16px 16px;">`+s+`</div>`;
+	    } else {
+		s=`<div class="modal-top">
+			<div class="modal-item">`+header+`</div>
+			<div class="modal-close mv0" onclick="dialog.close()">Close</div>
+		    </div>
+		    <div class="modal-item" style="padding: 16px 16px 16px 16px;">`+s+`</div>`;
+	    }
 
-    return id;
+
+	    var e=document.querySelector('dialog');
+
+	    var x='background-color'; e.style[x] = (set && set[x] ? set[x] : 'white');
+
+	    e.innerHTML=s;
+
+	    dialog.id++;
+	    e.showModal();
+	    // e.style.backdropFilter = 'opacity(0.75)';
+	    // e.style.zIndex=dialog.id;
+    	    e.classList.add('showing');
+	    e.classList.remove('closing');
+*/
 };
-
 dialog.id=0;
-dialog.close=function(id){
-      var e = document.querySelector( id ? '#'+id : 'dialog');
+dialog.close=function(){
+      var e=document.querySelector('dialog');
       e.classList.add('closing');
       e.classList.remove('showing');
-      setTimeout(() => { e.remove(); }, 300); // Таймаут для завершения анимации
+      var p=dialog.id;
+      setTimeout(() => {
+        if(p==dialog.id) {
+	    e.close();
+	    // e.style.backdropFilter = 'opacity(0)';
+	}
+      }, 300); // Таймаут для завершения анимации
 };
 
 

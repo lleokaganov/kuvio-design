@@ -1,6 +1,5 @@
 // import {LitElement, html, css} from 'lit';
 import {LitElement, html, css} from './lit-core.min.js';
-// import {LitElement, html, css} from './lit-all.min.js';
 
 
 class AuditPanel extends LitElement {

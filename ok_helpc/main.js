@@ -348,7 +348,6 @@ function newdiv(s,ara,paren,relative,display){ if(typeof(ara)!='object') ara={};
 function posdiv(id,x,y) { // позиционирование с проверкой на вылет, если аргумент '-1' - по центру экрана
     var e=dom(id),W,w,H,h,SW,SH,DW,DH;
     if(newin(e)) e=dom(id+'_body');
-    if(!e) return;
 
     e.style.position='absolute';
     w=e.clientWidth; h=e.clientHeight;

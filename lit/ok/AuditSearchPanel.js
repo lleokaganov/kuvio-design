@@ -1,5 +1,4 @@
 import {LitElement, html, css} from './lit-core.min.js';
-// import {LitElement, html, css} from './lit-all.min.js';
 
 class AuditSearchPanel extends LitElement {
   static styles = css`

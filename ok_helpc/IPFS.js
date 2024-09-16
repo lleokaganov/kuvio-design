@@ -134,7 +134,6 @@ HtmlView: function(html,hash,type) {
 PageView: function(url,hash,type) {
     IPFS.viewer("<i alt='Delete' onclick=\"IPFS.Del('"+hash+"')\" class='e_cancel mv'></i>&nbsp;"+h(type),
 	`<iframe src="${url}" frameborder='0' style="width:95vw;height:95vh" onload="center('ipfs-view','max')"></iframe>`
-//	`<iframe src="${url}" frameborder='0' style="max-width:100%;max-height:100%" onload="center('ipfs-view','max')"></iframe>`
     );
 },
 
@@ -150,7 +149,6 @@ viewer: function(header,html) {
 },
 
 viewer_iframe: function(name,url) {
-//    IPFS.viewer(name,`<iframe src="${url}" frameborder='0' style="max-width:95vw;max-height:95vh" onload="center('ipfs-view','max')"></iframe>`);
     IPFS.viewer(name,`<iframe src="${url}" frameborder='0' style="width:95vw;height:95vh" onload="center('ipfs-view','max')"></iframe>`);
 },
 
@@ -162,7 +160,7 @@ View: function(e) {
     else if(e && e.target) e=e.target;
 
     var hash=e.getAttribute('hash');
-    var name=e.getAttribute('name'); if(!name) name=e.textContent.replace(/<!--.*?-->/g,'').trim();
+    var name=e.getAttribute('name'); if(!name) name=e.innerHTML;
     if(!hash || !name) {
         e=IPFS.find_tr(e);
 	hash=IPFS.find_hash(e);
@@ -190,7 +188,7 @@ view_url: function(url,name,type) { // type in [image video audio text document 
     if(!type) type = name.split('.').pop().toLowerCase();
 
     if(['jpg', 'gif', 'png', 'webp', 'jpeg', 'svg'].includes(type)) {
-	IPFS.viewer(name, mpers(`<img src="{#url}" style="max-width:100%;max-height:100%" onload="center('ipfs-view','max')">`,{url: url}) );
+	IPFS.viewer(name, mpers(`<img src="{#url}" style="max-width:95vw;max-height:95vh" onload="center('ipfs-view','max')">`,{url: url}) );
     }
 
     else if(['mp3', 'ogg', 'wav'].includes(type)) {
@@ -229,10 +227,10 @@ view_url: function(url,name,type) { // type in [image video audio text document 
     }
 
     else if (['zip', 'rar', '7z', 'tar', 'gz'].includes(type)) {
-	salert(h(name)+'<p>archive',1000);
+	salert(h(name)+'<br>archive',1000);
     }
 
-    else salert(h(name)+'<p>unknown type',1000);
+    else salert(h(name)+'<br>unknown type',1000);
 },
 
 

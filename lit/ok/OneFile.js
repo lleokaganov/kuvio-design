@@ -2,21 +2,16 @@ import { LitElement, html, css } from './lit-core.min.js';
 
 class OneFile extends LitElement {
 
-// <one-file mode="file" name="Portfolio.pdf" description="My recent projects" size="15" time="12345678"><
+// <one-file mode="file" name="Portfolio.pdf" description="My recent projects" filesize="15" unixtime="12345678"><
 
   static properties = {
     mode: { type: String },
-
-    time: { type: Number },
     name: { type: String },
-    size: { type: Number },
-    hash: { type: String },
-
     description: { type: String },
     headname: { type: String },
     headdescription: { type: String },
-
-
+    filesize: { type: Number },
+    unixtime: { type: Number },
     check: { type: Boolean },
     unimode: { type: String },
   };
@@ -31,8 +26,8 @@ class OneFile extends LitElement {
     this.headdescription = '';
 
     this.name =  'no name';
-    this.size = 0;
-    this.time = 0;
+    this.filesize = 0;;
+    this.unixtime = 0;
 
     this.unimode = 'edit'; // select
 
@@ -172,19 +167,19 @@ headdescription="${this.headdescription}"
 	return html`
 	    <img class="icon24 mv0" src="${this.check ? "img/check_circle.svg":"img/radio_button_unchecked.svg"}">
 	    <div class="portfoliopdf-parent">
-    	    <div class="name" hash="${this.hash}" @click="${IPFS.View}">${this.name}</div>
+    	    <div class="name">${this.name}</div>
     	    <div class="description">${this.description}</div>
 	    </div>
-	    <div class="uploaded">Uploaded ${this.formatUnixTime(this.time)}</div>
+	    <div class="uploaded">Uploaded ${this.formatUnixTime(this.unixtime)}</div>
 	`;
     }
 
-    formatUnixTime(time) {
+    formatUnixTime(unixtime) {
 	// Текущая дата в миллисекундах
 	var now = Date.now();
 // console.log(parseInt(now/1000));
 	// Универсальное время преобразуем в миллисекунды
-	var timestamp = time * 1000;
+	var timestamp = unixtime * 1000;
 	// Если разница меньше 5 минут
 	if(now - timestamp <= 5 * 60 * 1000) return html`just now`;
 	// Преобразуем в дату
